@@ -19,9 +19,6 @@
 			 	название соответствующего форме bean'а }
 		-->
 		<action path="/helloWorld" type="name.earshinov.StrutsExample.HelloWorldAction" name="HelloWorldForm">
-			<!-- Привязка JSP-страниц
-				 Код, использующийся в коде обработчика страницы -> адрес JSP-страницы
-			-->
 			<forward name="success" path="/helloWorld.jsp" />
 		</action>
 		<action path="/login" type="name.earshinov.StrutsExample.LoginAction" name="LoginForm" input="/login.jsp" scope="session">
@@ -31,6 +28,7 @@
 	</action-mappings>
 	
 	<global-forwards>
+		<!-- Эта привязка используется в инструкции logic:forward на index.jsp -->
 		<forward name="helloWorld" path="/helloWorld.do"/>
 	</global-forwards>
 	
