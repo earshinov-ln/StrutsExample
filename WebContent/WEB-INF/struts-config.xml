@@ -12,6 +12,7 @@
 		<form-bean name="LoginForm" type="name.earshinov.StrutsExample.LoginForm"/>
 		<form-bean name="UserForm" type="name.earshinov.StrutsExample.UserForm"/>
 		<form-bean name="InputForm" type="name.earshinov.StrutsExample.InputForm"/>
+		<form-bean name="FeedbackForm" type="name.earshinov.StrutsExample.FeedbackForm"/>
 	</form-beans>
 	
 	<action-mappings>
@@ -33,6 +34,9 @@
 		</action>
 		<action path="/inputAction" type="name.earshinov.StrutsExample.InputAction" name="InputForm" input="/index.jsp">
 			<forward name="success" path="/index.jsp" />
+		</action>
+		<action path="/feedbackAction" type="name.earshinov.StrutsExample.FeedbackAction" name="FeedbackForm" input="/feedbackAction.jsp">
+			<forward name="success" path="/feedbackSuccess.jsp" />
 		</action>
 	</action-mappings>
 	
