@@ -15,8 +15,9 @@
 	<action-mappings>
 		<!-- Привязка страниц
 			 URL -> {
-			 	класс обработчика страницы,
-			 	название соответствующего форме bean'а }
+			 	type:  класс обработчика страницы,
+			 	name:  название соответствующего форме bean'а,
+			 	input: (опционально) страница для отображения в случае ошибок валидации }
 		-->
 		<action path="/helloWorld" type="name.earshinov.StrutsExample.HelloWorldAction" name="HelloWorldForm">
 			<forward name="success" path="/helloWorld.jsp" />
@@ -31,5 +32,7 @@
 		<!-- Эта привязка используется в инструкции logic:forward на index.jsp -->
 		<forward name="helloWorld" path="/helloWorld.do"/>
 	</global-forwards>
+	
+	<message-resources parameter="ApplicationResources"/>
 	
 </struts-config>
