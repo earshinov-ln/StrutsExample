@@ -8,7 +8,7 @@
 		<script type="text/javascript">
 			function submitForm()
 			{
-				document.forms[0].action = "userAction.do?method=add";
+				document.forms[0].action = "userAction.do?method=Add";
 				document.forms[0].submit();
 			}
 		</script>
@@ -18,8 +18,8 @@
 			<table>
 				<tr><td><bean:write name="UserForm" property="message" /></td></tr>
 				<tr><td><html:submit value="Add" onclick="submitForm()" /></td></tr>
-				<tr><td><html:submit property="method" value="update" /></td></tr>
-				<tr><td><html:submit  property="method">delete</html:submit></td></tr>
+				<tr><td><html:submit property="method" value="Update" /></td></tr>
+				<tr><td><html:submit  property="method">Delete</html:submit></td></tr>
 			</table>
 		</html:form>
 	</body>
