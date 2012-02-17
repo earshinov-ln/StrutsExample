@@ -1,6 +1,8 @@
 package name.earshinov.StrutsExample;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.util.LabelValueBean;
@@ -12,20 +14,22 @@ public class InputForm extends ActionForm {
 	private String country;
 	private String state;
 	
-	private static ArrayList<CountryData> countryList;
+	private static Collection<CountryData> countryList;
 	static {
 		countryList = new ArrayList<CountryData>();
 		countryList.add(new CountryData("1", "USA"));
 		countryList.add(new CountryData("2", "Canada"));
 		countryList.add(new CountryData("3", "Mexico"));
+		countryList = Collections.unmodifiableCollection(countryList);
 	}
 	
-	private static ArrayList<LabelValueBean> stateList;
+	private static Collection<LabelValueBean> stateList;
 	static {
 		stateList = new ArrayList<LabelValueBean>();
 		stateList.add(new LabelValueBean("New York", "1"));
 		stateList.add(new LabelValueBean("California", "2"));
 		stateList.add(new LabelValueBean("Los Angeles", "3"));
+		stateList = Collections.unmodifiableCollection(stateList);
 	}
 	
 	
