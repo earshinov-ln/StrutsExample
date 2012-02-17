@@ -10,6 +10,7 @@
 		-->
 		<form-bean name="HelloWorldForm" type="name.earshinov.StrutsExample.HelloWorldForm"/>
 		<form-bean name="LoginForm" type="name.earshinov.StrutsExample.LoginForm"/>
+		<form-bean name="UserForm" type="name.earshinov.StrutsExample.UserForm"/>
 	</form-beans>
 	
 	<action-mappings>
@@ -25,6 +26,9 @@
 		<action path="/login" type="name.earshinov.StrutsExample.LoginAction" name="LoginForm" input="/login.jsp" scope="session">
 			<forward name="success" path="/success.jsp" />
 			<forward name="failure" path="/failure.jsp" />
+		</action>
+		<action path="/userAction" type="name.earshinov.StrutsExample.UserAction" name="UserForm" input="/index.jsp" parameter="method" scope="session">
+			<forward name="success" path="/index.jsp" />
 		</action>
 	</action-mappings>
 	
