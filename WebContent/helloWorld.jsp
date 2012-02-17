@@ -6,6 +6,6 @@
 		<title>Hello World</title>
 	</head>
 	<body>
-		<bean:write name="helloWorldForm" property="message"/>
+		<bean:write name="HelloWorldForm" property="message"/>
 	</body>
 </html>

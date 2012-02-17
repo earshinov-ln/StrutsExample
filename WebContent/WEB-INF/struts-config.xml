@@ -6,24 +6,32 @@
 <struts-config>
 	<form-beans>
 		<!-- Привязка соответствующих формам bean'ов
-		     ( название -> класс bean'а )
+		     Название -> класс bean'а
 		-->
-		<form-bean name="helloWorldForm" type="name.earshinov.StrutsExample.HelloWorldForm"/>
+		<form-bean name="HelloWorldForm" type="name.earshinov.StrutsExample.HelloWorldForm"/>
+		<form-bean name="LoginForm" type="name.earshinov.StrutsExample.LoginForm"/>
 	</form-beans>
+	
+	<action-mappings>
+		<!-- Привязка страниц
+			 URL -> {
+			 	класс обработчика страницы,
+			 	название соответствующего форме bean'а }
+		-->
+		<action path="/helloWorld" type="name.earshinov.StrutsExample.HelloWorldAction" name="HelloWorldForm">
+			<!-- Привязка JSP-страниц
+				 Код, использующийся в коде обработчика страницы -> адрес JSP-страницы
+			-->
+			<forward name="success" path="/helloWorld.jsp" />
+		</action>
+		<action path="/login" type="name.earshinov.StrutsExample.LoginAction" name="LoginForm" input="/login.jsp" scope="session">
+			<forward name="success" path="/success.jsp" />
+			<forward name="failure" path="/failure.jsp" />
+		</action>
+	</action-mappings>
 	
 	<global-forwards>
 		<forward name="helloWorld" path="/helloWorld.do"/>
 	</global-forwards>
 	
-	<action-mappings>
-		<!-- Привязка страниц
-			 ( URL -> (класс обработчика страницы, название соответствующего форме bean'а) )
-		-->
-		<action path="/helloWorld" type="name.earshinov.StrutsExample.HelloWorldAction" name="helloWorldForm">
-			<!-- Привязка JSP-страниц
-				 ( код, использующийся в коде обработчика страницы -> адрес JSP-страницы ) 
-			-->
-			<forward name="success" path="/helloWorld.jsp" />
-		</action>
-	</action-mappings>
 </struts-config>
