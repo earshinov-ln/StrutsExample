@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE struts-config PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+	"http://struts.apache.org/dtds/struts-config_1_3.dtd">
+
+<struts-config>
+	<form-beans>
+		<!-- Привязка соответствующих формам bean'ов
+		     ( название -> класс bean'а )
+		-->
+		<form-bean name="helloWorldForm" type="name.earshinov.StrutsExample.HelloWorldForm"/>
+	</form-beans>
+	
+	<global-forwards>
+		<forward name="helloWorld" path="/helloWorld.do"/>
+	</global-forwards>
+	
+	<action-mappings>
+		<!-- Привязка страниц
+			 ( URL -> (класс обработчика страницы, название соответствующего форме bean'а) )
+		-->
+		<action path="/helloWorld" type="name.earshinov.StrutsExample.HelloWorldAction" name="helloWorldForm">
+			<!-- Привязка JSP-страниц
+				 ( код, использующийся в коде обработчика страницы -> адрес JSP-страницы ) 
+			-->
+			<forward name="success" path="/helloWorld.jsp" />
+		</action>
+	</action-mappings>
+</struts-config>
