@@ -8,7 +8,8 @@
 		<div style="color:red">
 			<html:errors />
 		</div>
-		<html:form action="/dynaLogin" >
+		<html:form action="/dynaLogin" onsubmit="return validateDynaLoginForm(this);">
+			<html:javascript formName="DynaLoginForm" />
 			User Name : <html:text name="DynaLoginForm" property="userName" />
 			Password : <html:password name="DynaLoginForm" property="password" />
 			<html:submit value="Login" />
