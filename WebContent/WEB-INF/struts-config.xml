@@ -60,6 +60,9 @@
 			<forward name="friends" path="friends"/>
 			<forward name="office" path="office"/>
 		</action>
+		<action path="/changeLocale" parameter="locale" type="name.earshinov.StrutsExample.ChangeLocaleAction">
+			<forward name="success" path="/changeLocale.jsp"/>
+		</action>
 	</action-mappings>
 	
 	<global-forwards>
