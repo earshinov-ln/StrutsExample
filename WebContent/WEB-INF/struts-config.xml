@@ -19,8 +19,10 @@
 		</form-bean>
 		<form-bean name="UserForm2" type="org.apache.struts.validator.DynaValidatorForm">
 			<!-- Whenever the form field is subjected to any validation use java.lang.String as its type. -->
+			<form-property name="userName" type="java.lang.String" />
 			<form-property name="dob" type="java.lang.String" />
 			<form-property name="email" type="java.lang.String" />
+			<form-property name="phoneNumber" type="java.lang.String" />
 		</form-bean>
 	</form-beans>
 	

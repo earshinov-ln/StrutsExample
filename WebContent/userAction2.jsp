@@ -11,6 +11,11 @@
 			<html:javascript formName="UserForm2"/>
 			<table>
 				<tr>
+					<td>User Name</td>
+					<td><html:text name="UserForm2" property="userName" errorStyleClass="error" errorKey="org.apache.struts.action.ERROR" /></td>
+					<td><html:errors property="userName"/></td>
+				</tr>
+				<tr>
 					<td>Date of Birth</td>
 					<td><html:text name="UserForm2" property="dob" errorStyleClass="error" errorKey="org.apache.struts.action.ERROR" /></td>
 					<td><html:errors property="dob"/></td>
@@ -19,6 +24,11 @@
 					<td>Email</td>
 					<td><html:text name="UserForm2" property="email" errorStyleClass="error" errorKey="org.apache.struts.action.ERROR" /></td>
 					<td><html:errors property="email"/></td>
+				</tr>
+				<tr>
+					<td>Phone Number</td>
+					<td><html:text name="UserForm2" property="phoneNumber" errorStyleClass="error" errorKey="org.apache.struts.action.ERROR" /></td>
+					<td><html:errors property="phoneNumber"/></td>
 				</tr>
 				<tr>
 					<td colspan="3"><html:submit value="Submit" /></td>

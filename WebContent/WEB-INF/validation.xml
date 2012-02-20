@@ -18,6 +18,14 @@
 			</field>
 		</form>
 		<form name="UserForm2">
+			<field property="userName" depends="required,mask">
+				<msg name="mask" key="UserForm2.userName.mask" />
+				<arg key="UserForm2.userName"/>
+				<var>
+					<var-name>mask</var-name>
+					<var-value>^[a-zA-Z]*$</var-value>
+				</var>
+			</field>
 			<field property="dob" depends="required,date">
 				<arg key="UserForm2.dob"/>
 				<var>
@@ -27,6 +35,14 @@
 			</field>
 			<field property="email" depends="required,email">
 				<arg key="UserForm2.email"/>
+			</field>
+			<field property="phoneNumber" depends="required,mask">
+				<msg name="mask" key="UserForm2.phoneNumber.mask" />
+				<arg key="UserForm2.phoneNumber"/>
+				<var>
+					<var-name>mask</var-name>
+					<var-value>^[0-9]*$</var-value>
+				</var>
 			</field>
 		</form>
 	</formset>
