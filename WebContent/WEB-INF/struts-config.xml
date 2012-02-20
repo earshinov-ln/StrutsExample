@@ -30,8 +30,8 @@
 			<forward name="success" path="/helloWorld.jsp" />
 		</action>
 		<action path="/login" type="name.earshinov.StrutsExample.LoginAction" name="LoginForm" input="/login.jsp" scope="session">
-			<forward name="success" path="/success.jsp" />
-			<forward name="failure" path="/failure.jsp" />
+			<forward name="success" path="/loginSuccess.jsp" />
+			<forward name="failure" path="/loginFailure.jsp" />
 		</action>
 		<action path="/userAction" type="name.earshinov.StrutsExample.UserAction" name="UserForm" input="/index.jsp" parameter="method" scope="session">
 			<forward name="success" path="/index.jsp" />
