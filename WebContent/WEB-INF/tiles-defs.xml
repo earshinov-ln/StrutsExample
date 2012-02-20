@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 1.1//EN"
+       "http://jakarta.apache.org/struts/dtds/tiles-config_1_1.dtd">
+<tiles-definitions>
+	<definition name="baseLayout" path="/tiles-layout.jsp">
+		<put name="title"  value="Tiles Example" />
+		<put name="header" value="/tiles-header.jsp" />
+		<put name="menu"   value="/tiles-menu.jsp" />
+		<put name="body"   value="/tiles-body.jsp" />
+		<put name="footer" value="/tiles-footer.jsp" />
+	</definition>
+	<definition name="friends" extends="baseLayout">
+		<put name="title" value="Friends" />
+		<put name="body" value="/tiles-friends.jsp" />
+	</definition>
+	<definition name="office" extends="baseLayout">
+		<put name="title" value="The Office" />
+		<put name="body" value="/tiles-office.jsp" />
+	</definition>
+</tiles-definitions>

@@ -56,6 +56,10 @@
 		<action path="/userAction2" type="name.earshinov.StrutsExample.UserAction2" name="UserForm2" input="/userAction2.jsp" scope="session">
 			<forward name="success" path="/userAction2.jsp" />
 		</action>
+		<action path="/tilesLink" parameter="method" type="name.earshinov.StrutsExample.TilesLinkAction">
+			<forward name="friends" path="friends"/>
+			<forward name="office" path="office"/>
+		</action>
 	</action-mappings>
 	
 	<global-forwards>
@@ -64,6 +68,14 @@
 	</global-forwards>
 	
 	<message-resources parameter="ApplicationResources"/>
+	
+	<controller processorClass="org.apache.struts.tiles.TilesRequestProcessor"/>
+	
+	<!-- Плагин "Tiles" для задание layout'а страниц -->
+	<plug-in className="org.apache.struts.tiles.TilesPlugin" >
+		<set-property property="definitions-config" value="/WEB-INF/tiles-defs.xml" />
+		<set-property property="moduleAware" value="true" />
+	</plug-in>
 	
 	<!-- Использование Struts Validation Framework -->
 	<plug-in className="org.apache.struts.validator.ValidatorPlugIn">
