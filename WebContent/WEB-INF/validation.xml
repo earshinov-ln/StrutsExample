@@ -17,5 +17,17 @@
 				</var>
 			</field>
 		</form>
+		<form name="UserForm2">
+			<field property="dob" depends="required,date">
+				<arg key="UserForm2.dob"/>
+				<var>
+					<var-name>datePattern</var-name>
+					<var-value>dd-MM-yy</var-value>
+				</var>
+			</field>
+			<field property="email" depends="required,email">
+				<arg key="UserForm2.email"/>
+			</field>
+		</form>
 	</formset>
 </form-validation>

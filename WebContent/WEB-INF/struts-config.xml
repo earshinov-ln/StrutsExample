@@ -17,6 +17,11 @@
 			<form-property name="userName" type="java.lang.String" />
 			<form-property name="password" type="java.lang.String" />
 		</form-bean>
+		<form-bean name="UserForm2" type="org.apache.struts.validator.DynaValidatorForm">
+			<!-- Whenever the form field is subjected to any validation use java.lang.String as its type. -->
+			<form-property name="dob" type="java.lang.String" />
+			<form-property name="email" type="java.lang.String" />
+		</form-bean>
 	</form-beans>
 	
 	<action-mappings>
@@ -45,6 +50,9 @@
 		<action path="/dynaLogin" type="name.earshinov.StrutsExample.DynaLoginAction" name="DynaLoginForm" input="/dynaLogin.jsp" scope="session">
 			<forward name="success" path="/dynaLoginSuccess.jsp" />
 			<forward name="failure" path="/dynaLoginFailure.jsp" />
+		</action>
+		<action path="/userAction2" type="name.earshinov.StrutsExample.UserAction2" name="UserForm2" input="/userAction2.jsp" scope="session">
+			<forward name="success" path="/userAction2.jsp" />
 		</action>
 	</action-mappings>
 	
