@@ -3,11 +3,11 @@ package name.earshinov.StrutsExample;
 import javax.servlet.http.HttpServletRequest;
 
 import org.apache.struts.action.ActionErrors;
-import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionMapping;
 import org.apache.struts.action.ActionMessage;
+import org.apache.struts.validator.ValidatorForm;
 
-public class LoginForm extends ActionForm {
+public class LoginForm extends ValidatorForm {
 
 	private static final long serialVersionUID = 1L;
 	
@@ -21,6 +21,8 @@ public class LoginForm extends ActionForm {
 			errors.add("userName", new ActionMessage("error.userName.required"));
 		if (password == null || password.length() < 1)
 			errors.add("password", new ActionMessage("error.password.required"));
+		if (password.length() < 6)
+			errors.add("password", new ActionMessage("error.password.minlength"));
 		return errors;
 	}
 
