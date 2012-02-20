@@ -13,7 +13,7 @@
 		<form-bean name="UserForm" type="name.earshinov.StrutsExample.UserForm"/>
 		<form-bean name="InputForm" type="name.earshinov.StrutsExample.InputForm"/>
 		<form-bean name="FeedbackForm" type="name.earshinov.StrutsExample.FeedbackForm"/>
-		<form-bean name="DynaLoginForm" type="org.apache.struts.action.DynaActionForm">
+		<form-bean name="DynaLoginForm" type="org.apache.struts.validator.DynaValidatorForm">
 			<form-property name="userName" type="java.lang.String" />
 			<form-property name="password" type="java.lang.String" />
 		</form-bean>
@@ -54,5 +54,10 @@
 	</global-forwards>
 	
 	<message-resources parameter="ApplicationResources"/>
+	
+	<!-- Использование Struts Validation Framework -->
+	<plug-in className="org.apache.struts.validator.ValidatorPlugIn">
+		<set-property property="pathnames" value="/WEB-INF/validator-rules.xml,/WEB-INF/validation.xml"/>
+	</plug-in>
 	
 </struts-config>

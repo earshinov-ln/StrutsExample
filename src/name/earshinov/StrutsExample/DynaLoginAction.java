@@ -7,12 +7,12 @@ import org.apache.struts.action.Action;
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
-import org.apache.struts.action.DynaActionForm;
+import org.apache.struts.validator.DynaValidatorForm;
 
 public class DynaLoginAction extends Action {
 
 	public ActionForward execute(ActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response) throws Exception {
-		DynaActionForm loginForm = (DynaActionForm) form;
+		DynaValidatorForm loginForm = (DynaValidatorForm) form;
 		String userName = loginForm.get("userName").toString();
 		String password = loginForm.get("password").toString();
 		
