@@ -6,7 +6,11 @@
 <struts-config>
 	<form-beans>
 		<!-- Привязка соответствующих формам bean'ов
-		     Название -> класс bean'а
+		     Название -> класс bean'а.
+		     
+		     При вводе названия класса надо быть осторожным! В случае ошибки Struts просто
+		     будет выбрасывать ошибку, что bean не найден (не упоминая, что просто не
+		     получилось найти класс) 
 		-->
 		<form-bean name="HelloWorldForm" type="name.earshinov.StrutsExample.HelloWorldForm"/>
 		<form-bean name="LoginForm" type="name.earshinov.StrutsExample.LoginForm"/>
@@ -24,6 +28,7 @@
 			<form-property name="email" type="java.lang.String" />
 			<form-property name="phoneNumber" type="java.lang.String" />
 		</form-bean>
+		<form-bean name="UsersForm" type="name.earshinov.StrutsExample.UsersForm"/>
 	</form-beans>
 	
 	<action-mappings>
@@ -62,6 +67,13 @@
 		</action>
 		<action path="/changeLocale" parameter="locale" type="name.earshinov.StrutsExample.ChangeLocaleAction">
 			<forward name="success" path="/changeLocale.jsp"/>
+		</action>
+		<action path="/users" type="name.earshinov.StrutsExample.UsersAction" name="UsersForm" input="/users.jsp">
+			<!--
+				Хотелось бы обойтись без форварда и ничего не делающей реализации метода UsersAction.execute(),
+			 	но не получается - в этом случае почему-то в браузер возвращается пустая страница
+			 -->
+			<forward name="success" path="/users.jsp"/>
 		</action>
 	</action-mappings>
 	
